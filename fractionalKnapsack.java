@@ -21,6 +21,7 @@ public class fractionalKnapsack {
             else{
                 maxprofit += mat[i][1]*capacity;
                 capacity =0;
+                break;
             }
         }
         System.out.println("Maximum Profit using fractional knapsack: "+maxprofit);
