@@ -63,10 +63,15 @@ public class circularQueueUsingArray {
         q1.add(1);
         q1.add(2);
         q1.add(3);
-        q2.add(4);
+        q1.remove();
+        q1.add(4);
+        
         q2.add(5);
         q2.add(6);
         q2.add(7);
+        q2.add(8);
+        q2.remove();
+        q2.add(9);
 
         System.out.println("Queue  1 after performing remove oprtn is:");
         while(!q1.isEmpty()){
