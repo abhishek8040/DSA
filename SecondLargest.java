@@ -28,5 +28,7 @@ public class SecondLargest {
             arr[i]= sc.nextInt();
         }
         secondLargest(arr);
+        sc.close();
     }
+    
 }
