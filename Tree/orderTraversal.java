@@ -1,4 +1,7 @@
 package Tree;
+
+import java.util.*;
+
 public class orderTraversal {
     public static class Node{
         int val;
@@ -36,6 +39,28 @@ public class orderTraversal {
         
     }
 
+    public static void levelorder(Node root){
+        if(root == null){
+            return;
+        }
+        Queue<Node> q = new ArrayDeque<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            int size = q.size();            
+            for(int i=0;i<size;i++){
+                Node currNode = q.remove();
+                System.out.print(currNode.val+" ");
+                if(currNode.left != null){
+                    q.add(currNode.left);
+                }
+                if(currNode.right!= null){
+                    q.add(currNode.right);
+                }
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         Node a = new Node(2);
@@ -56,5 +81,8 @@ public class orderTraversal {
         System.out.println();
         System.out.print("InOrder Traversal: ");
         inorder(root);
+        System.out.println();
+        System.out.println("Level Order Traversal: ");
+        levelorder(root);
     }
 }
