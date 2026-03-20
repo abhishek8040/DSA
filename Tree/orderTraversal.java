@@ -61,6 +61,23 @@ public class orderTraversal {
         }
     }
 
+    public static int height(Node root){
+        int lh, rh, treeheight;
+        if(root == null) return 0;
+        lh = height(root.left);
+        rh = height(root.right);
+        treeheight = Math.max(rh, lh)+1;
+        return treeheight;
+        
+    }
+    public static int count(Node root){
+        if(root == null) return 0;
+        int lc = count(root.left);
+        int rc = count(root.right);
+        int treecount = lc+rc+1;
+        return treecount;
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         Node a = new Node(2);
@@ -84,5 +101,7 @@ public class orderTraversal {
         System.out.println();
         System.out.println("Level Order Traversal: ");
         levelorder(root);
+        System.out.println("Tree height: "+height(root));
+        System.out.println("Nodes count: "+count(root));
     }
 }
