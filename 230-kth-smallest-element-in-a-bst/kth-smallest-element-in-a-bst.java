@@ -14,15 +14,19 @@
  * }
  */
 class Solution {
+    int count=0, ans=0;
     public int kthSmallest(TreeNode root, int k) {
-        ArrayList<Integer> lst= new ArrayList<>();
-        inorder(root,lst);
-        return lst.get(k-1);
+        inorder(root,k);
+        return ans;
     }
-    private void inorder(TreeNode root, ArrayList<Integer> lst){
+    private void inorder(TreeNode root,int k){
         if(root==null) return;
-        inorder(root.left,lst);
-        lst.add(root.val);
-        inorder(root.right,lst);
+        inorder(root.left,k);
+        count++;
+        if(count==k){
+            ans = root.val;
+            return;
+        }
+        inorder(root.right,k);
     }
 }
