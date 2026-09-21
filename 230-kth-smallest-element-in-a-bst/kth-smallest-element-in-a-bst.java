@@ -19,14 +19,14 @@ class Solution {
         inorder(root,k);
         return ans;
     }
-    private void inorder(TreeNode root,int k){
-        if(root==null) return;
+    private boolean inorder(TreeNode root,int k){
+        if(root==null) return false;
         inorder(root.left,k);
         count++;
         if(count==k){
             ans = root.val;
-            return;
+            return true;
         }
-        inorder(root.right,k);
+        return inorder(root.right,k);
     }
 }
