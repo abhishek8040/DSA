@@ -1,7 +1,6 @@
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
-        int i=0;
         backtrack(nums,0,new ArrayList<>(),ans);
         return ans;
     }
