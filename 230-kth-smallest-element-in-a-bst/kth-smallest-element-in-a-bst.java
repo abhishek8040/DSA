@@ -21,7 +21,7 @@ class Solution {
     }
     private boolean inorder(TreeNode root,int k){
         if(root==null) return false;
-        inorder(root.left,k);
+        if (inorder(root.left, k)) return true;        
         count++;
         if(count==k){
             ans = root.val;
