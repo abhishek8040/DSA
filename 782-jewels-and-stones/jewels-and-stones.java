@@ -1,12 +1,12 @@
 class Solution {
     public int numJewelsInStones(String jewels, String stones) {
-        HashMap<Character,Integer> mp = new HashMap<>();
+        int freq[]= new int[256];
         int count=0;
         for(int i=0;i<stones.length();i++){
-            mp.put(stones.charAt(i),mp.getOrDefault(stones.charAt(i),0)+1);
+            freq[stones.charAt(i)]++;
         }
         for(int j=0;j<jewels.length();j++){
-            count+= mp.getOrDefault(jewels.charAt(j),0);
+            count += freq[jewels.charAt(j)];
         }
         return count;
     }
